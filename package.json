@@ -1,0 +1,33 @@
+{
+  "name": "pruebatec",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Vanessa Ramirez",
+  "license": "ISC",
+  "description": "prueba tecnica",
+  "dependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.0",
+    "@babel/node": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "apollo-server": "^3.13.0",
+    "bcrypt": "^5.1.1",
+    "graphql": "^16.10.0",
+    "graphql-import": "^1.0.2",
+    "graphql-tools": "^9.0.11",
+    "jsonwebtoken": "^9.0.2",
+    "liquibase": "^4.28.1",
+    "liquibase-node": "^1.0.7",
+    "lodash": "^4.17.21",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9"
+  }
+}
