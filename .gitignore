@@ -3,8 +3,5 @@ package-lock.json
 .babelrc
 
 # Ignorar archivos sensibles de Liquibase
-*.properties
-*.yml
-liquibase/
-db.changelog-master.xml
+
 

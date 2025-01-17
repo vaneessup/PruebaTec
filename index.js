@@ -1,8 +1,22 @@
 const { ApolloServer } = require('apollo-server');
 const jwt = require('jsonwebtoken');
+const { exec } = require('child_process');  // Importamos el módulo para ejecutar comandos
 const typeDefs = require('./src/schemas/typeDefs');
 const resolvers = require('./src/resolvers/resolvers');
 const key = "1234"; // Asegúrate de que tu clave esté en un entorno seguro (evita usar valores en hardcode)
+
+// Ejecutar el comando de Liquibase
+exec('liquibase --changeLogFile=db.changelog-master.xml update', (err, stdout, stderr) => {
+  if (err) {
+    console.error(`Error ejecutando Liquibase: ${err.message}`);
+    return;
+  }
+  if (stderr) {
+    console.error(`stderr: ${stderr}`);
+    return;
+  }
+  console.log(`Liquibase output: ${stdout}`);
+});
 
 const server = new ApolloServer({
   typeDefs,
