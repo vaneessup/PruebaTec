@@ -11,6 +11,7 @@ const postResolvers = {
       try {
         return await getAllPosts();
       } catch (err) {
+        console.error(err); // Para poder depurar si es necesario
         throw new Error('Error al obtener los posts');
       }
     },
@@ -21,13 +22,17 @@ const postResolvers = {
       }
 
       try {
+        if (!id || isNaN(id)) {
+          throw new Error('ID de post inválido');
+        }
         const post = await getPostById(id);
         if (!post) {
           throw new Error('Post no encontrado');
         }
         return post;
       } catch (err) {
-        throw new Error('Error interno al obtener el post');
+        console.error(err); // Para depurar
+        throw new Error('Post no encontrado');
       }
     },
   },
@@ -38,9 +43,14 @@ const postResolvers = {
         throw new Error('No autorizado');
       }
 
+      if (!title || !content) {
+        throw new Error('El título y el contenido son obligatorios');
+      }
+
       try {
         return await createPost(context.userId, title, content);
       } catch (err) {
+        console.error(err);
         throw new Error('Error al crear el post');
       }
     },
@@ -53,6 +63,10 @@ const postResolvers = {
         throw new Error('No autorizado');
       }
 
+      if (!title || !content) {
+        throw new Error('El título y el contenido son obligatorios');
+      }
+
       try {
         const updatedPost = await updatePost(userId, postId, title, content);
 
@@ -61,7 +75,8 @@ const postResolvers = {
         }
         return updatedPost;
       } catch (err) {
-        throw new Error('Error al actualizar el post');
+        console.error(err);
+         throw new Error('Post no encontrado o no autorizado para actualizar');
       }
     },
 
@@ -80,7 +95,8 @@ const postResolvers = {
         }
         return deletedPost;
       } catch (err) {
-        throw new Error('Error al eliminar el post');
+        console.error(err);
+        throw new Error('Post no encontrado o no autorizado para eliminar');
       }
     },
   },
