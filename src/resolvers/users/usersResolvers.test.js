@@ -1,10 +1,10 @@
-const userResolvers = require('../resolvers/usersResolvers');
-const { getAllUsers, getUserById, createUser, updateUser, deleteUser, getUserByEmail } = require('../models/users');
-const { GraphQLErrorWithCode } = require('../errors');
+const userResolvers = require('../users/usersResolvers');
+const { getAllUsers, getUserById, createUser, updateUser, deleteUser, getUserByEmail } = require('../../models/users');
+const { GraphQLErrorWithCode } = require('../../errors');
 
 
 // Mockear las funciones del modelo
-jest.mock('../models/users');
+jest.mock('../../models/users');
 
 describe('User Resolvers', () => {
   describe('Query: users', () => {

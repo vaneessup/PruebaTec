@@ -1,8 +1,8 @@
 // userResolvers.js
-const { getAllUsers, getUserById, createUser, getUserByEmail, deleteUser, updateUser } = require('../models/users');
+const { getAllUsers, getUserById, createUser, getUserByEmail, deleteUser, updateUser } = require('../../models/users');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const { handleError, GraphQLErrorWithCode } = require('../errors');
+const { handleError, GraphQLErrorWithCode } = require('../../errors');
 
 const key = "1234";
 

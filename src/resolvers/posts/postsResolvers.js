@@ -1,5 +1,5 @@
 
-const { getAllPosts, getPostById, createPost, updatePost, deletePost } = require('../models/posts');
+const { getAllPosts, getPostById, createPost, updatePost, deletePost } = require('../../models/posts');
 
 const postResolvers = {
   Query: {
@@ -11,7 +11,6 @@ const postResolvers = {
       try {
         return await getAllPosts();
       } catch (err) {
-        console.error(err); // Para poder depurar si es necesario
         throw new Error('Error al obtener los posts');
       }
     },
@@ -31,7 +30,6 @@ const postResolvers = {
         }
         return post;
       } catch (err) {
-        console.error(err); // Para depurar
         throw new Error('Post no encontrado');
       }
     },
@@ -50,7 +48,6 @@ const postResolvers = {
       try {
         return await createPost(context.userId, title, content);
       } catch (err) {
-        console.error(err);
         throw new Error('Error al crear el post');
       }
     },
@@ -75,7 +72,6 @@ const postResolvers = {
         }
         return updatedPost;
       } catch (err) {
-        console.error(err);
          throw new Error('Post no encontrado o no autorizado para actualizar');
       }
     },
@@ -95,7 +91,6 @@ const postResolvers = {
         }
         return deletedPost;
       } catch (err) {
-        console.error(err);
         throw new Error('Post no encontrado o no autorizado para eliminar');
       }
     },

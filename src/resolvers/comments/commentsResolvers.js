@@ -1,5 +1,5 @@
 
-const { getCommentsByPostId, createComment, updateComment, deleteComments } = require('../models/comments');
+const { getCommentsByPostId, createComment, updateComment, deleteComments } = require('../../models/comments');
 
 const commentResolvers = {
   Query: {
@@ -52,7 +52,6 @@ const commentResolvers = {
         const deletedComment = await deleteComments(commentId, userId, postId);
         return deletedComment; // Puedes devolver el comentario eliminado si lo deseas
       } catch (err) {
-        console.log(err);
         throw new Error('Error al eliminar el comentario');
       }
     },

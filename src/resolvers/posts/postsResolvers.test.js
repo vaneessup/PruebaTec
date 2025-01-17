@@ -1,8 +1,8 @@
-const { GraphQLErrorWithCode } = require('../errors');
-const postResolvers = require('../resolvers/postsResolvers');
-const { getAllPosts, getPostById, createPost, updatePost, deletePost } = require('../models/posts');
+const { GraphQLErrorWithCode } = require('../../errors');
+const postResolvers = require('./postsResolvers');
+const { getAllPosts, getPostById, createPost, updatePost, deletePost } = require('../../models/posts');
 
-jest.mock('../models/posts');
+jest.mock('../../models/posts');
 
 describe('Post Resolvers - Querys', () => {
   it('should throw an error if no userId in context', async () => {

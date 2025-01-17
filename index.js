@@ -13,10 +13,8 @@ exec('liquibase --changeLogFile=db.changelog-master.xml update', (err, stdout, s
     return;
   }
   if (stderr) {
-    console.error(`stderr: ${stderr}`);
     return;
   }
-  console.log(`Liquibase output: ${stdout}`);
 });
 
 const server = new ApolloServer({
@@ -43,8 +41,7 @@ const server = new ApolloServer({
   formatError: (err) => {
     // Verificar si el error es de tipo GraphQLErrorWithCode
     if (err.originalError instanceof GraphQLErrorWithCode) {
-      // Aquí personalizas el error, puedes incluir más detalles como "errorCode" o "status"
-      console.log(err, 'errror')
+
       return {
         message: err.message,
         code: err.originalError.code, // El código de error HTTP que has asignado
@@ -52,8 +49,6 @@ const server = new ApolloServer({
         timestamp: new Date().toISOString(), // Puedes agregar la hora del error si lo necesitas
       };
     }
-    // Si el error no es de tipo GraphQLErrorWithCode, lo pasamos tal cual
-    console.log(err, 'errror 22')
     return err;
   },
 });
