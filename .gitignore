@@ -20,7 +20,6 @@ build/
 
 # Docker files
 .dockerignore
-docker-compose.override.yml
 docker-compose.yml
 
 # Database files
@@ -30,4 +29,6 @@ liquibase.properties
 # Temporary or sensitive files
 *.pem
 *.key
+
+liquibase.properties
 
