@@ -68,7 +68,7 @@ Si prefieres ejecutar PostgreSQL localmente, sigue estos pasos:
 
 Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
 
-```env
+```env.local
 DB_HOST=localhost
 DB_PORT=5432
 DB_USER=tu_usuario
@@ -76,6 +76,15 @@ DB_PASSWORD=tu_clave
 DB_NAME=tu_bd
 
 ```
+```env.docker
+DB_HOST=db
+DB_PORT=5433
+DB_USER=tu_usuario
+DB_PASSWORD=tu_clave
+DB_NAME=tu_bd
+
+```
+
 
 Asegúrate de reemplazar `usuario`, `contraseña` y `mi_base_de_datos` con tus credenciales y el nombre de tu base de datos.
 
@@ -270,6 +279,9 @@ password=contraseña
 driver=org.postgresql.Driver
 changeLogFile=db.changelog-master.xml
 ```
+
+
+NO OLVIDES MODIFICAR EL ARCHIVO DE CONEXIÓN A LA BASE DE DATOS!!
 
 ## 🤝 Contribuciones
 
