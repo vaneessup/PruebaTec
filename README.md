@@ -66,7 +66,7 @@ Si prefieres ejecutar PostgreSQL localmente, sigue estos pasos:
 
 ### 📝 Configuración del entorno
 
-Crea un archivo `.env.local y un .env.docker` en la raíz del proyecto con las siguientes variables:
+Crea un archivo `.env.local` en la raíz del proyecto con las siguientes variables:
 
 ```env.local
 DB_HOST=localhost
@@ -76,15 +76,6 @@ DB_PASSWORD=tu_clave
 DB_NAME=tu_bd
 
 ```
-```env.docker
-DB_HOST=db
-DB_PORT=5433
-DB_USER=tu_usuario
-DB_PASSWORD=tu_clave
-DB_NAME=tu_bd
-
-```
-
 
 Asegúrate de reemplazar `usuario`, `contraseña` y `mi_base_de_datos` con tus credenciales y el nombre de tu base de datos.
 
@@ -96,7 +87,7 @@ Iniciar el servidor en desarrollo:
 npm run start
 ```
 
-Este comando iniciará el servidor en modo de desarrollo. Puedes acceder a [http://localhost:4000/graphql](http://localhost:4000/graphql) para interactuar con el esquema GraphQL.
+Este comando iniciará el servidor en modo de desarrollo. Puedes acceder a [http://localhost:4000/graphql](http://localhost:4000/graphql).
 
 ### 🔬 Ejecutar pruebas unitarias
 
@@ -108,7 +99,7 @@ Este comando ejecutará las pruebas unitarias de los resolvers de GraphQL para a
 
 ### 🔑 Endpoints disponibles
 
-**GraphQL Playground:** Una vez que el servidor esté ejecutándose, puedes acceder a [http://localhost:4000/graphql](http://localhost:4000/graphql) para interactuar con el esquema GraphQL.
+**GraphQL Playground:** Una vez que el servidor esté ejecutándose, puedes acceder a [http://localhost:4000/graphql](http://localhost:4000/graphql).
 
 ### 💻 Ejemplo de Queries y Mutations
 
