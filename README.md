@@ -66,7 +66,7 @@ Si prefieres ejecutar PostgreSQL localmente, sigue estos pasos:
 
 ### 📝 Configuración del entorno
 
-Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
+Crea un archivo `.env.local y un .env.docker` en la raíz del proyecto con las siguientes variables:
 
 ```env.local
 DB_HOST=localhost
