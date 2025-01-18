@@ -1,7 +1,33 @@
-node_modules
-package-lock.json
-.babelrc
+# Node modules
+node_modules/
 
-# Ignorar archivos sensibles de Liquibase
+# Environment files
+.env.local
+.env.docker
 
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# MacOS and Windows system files
+.DS_Store
+Thumbs.db
+
+# Build and dist files
+dist/
+build/
+
+# Docker files
+.dockerignore
+docker-compose.override.yml
+docker-compose.yml
+
+# Database files
+db.changelog-master.xml
+liquibase.properties
+
+# Temporary or sensitive files
+*.pem
+*.key
 

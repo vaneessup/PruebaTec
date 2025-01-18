@@ -114,5 +114,28 @@
     <dropTable tableName="products"/>
 </changeSet>
 
+ <changeSet author="yeymi (prueba crear codigo comentado)" id="1737070192859-5" runOnChange="true">    
+    <preConditions onFail="MARK_RAN">
+        <not>
+            <tableExists tableName="friends"/>
+        </not>
+    </preConditions>
 
+    <createTable tableName="friends">
+
+        <column autoIncrement="true" name="id" type="INTEGER">
+            <constraints nullable="false" primaryKey="true"/>
+        </column>
+
+        <column name="name" type="VARCHAR(100)">
+            <constraints nullable="false"/>
+        </column>
+        <column defaultValueComputed="CURRENT_TIMESTAMP" name="created_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+        <column defaultValueComputed="CURRENT_TIMESTAMP" name="updated_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    </createTable>
+    </changeSet>
+
+<changeSet author="vane" id="5">
+    <dropTable tableName="friends"/>
+</changeSet>
 </databaseChangeLog>
