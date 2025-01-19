@@ -32,4 +32,5 @@ liquibase.properties
 *.pem
 *.key
 
+.vscode
 
