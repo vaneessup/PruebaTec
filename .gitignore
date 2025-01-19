@@ -1,5 +1,6 @@
 # Node modules
 node_modules/
+package-lock.json
 
 # Environment files
 .env.local
@@ -18,9 +19,10 @@ Thumbs.db
 dist/
 build/
 
-# Docker files
-.dockerignore
+#Docker
 docker-compose.yml
+.dockerignore
+
 
 # Database files
 db.changelog-master.xml
@@ -30,5 +32,4 @@ liquibase.properties
 *.pem
 *.key
 
-liquibase.properties
 

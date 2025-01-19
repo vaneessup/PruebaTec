@@ -47,7 +47,6 @@ const userResolvers = {
     
         return await createUser(name, email, password);
       } catch (err) {
-        console.log(err, 'error')
         throw new GraphQLErrorWithCode('Error al crear el usuario', '422'); // Asegúrate de que se lanza un error genérico en el catch
       }
     },
@@ -114,7 +113,6 @@ const userResolvers = {
         const token = jwt.sign({ userId: user.id }, key, { expiresIn: '1h' });
         return { token, user };
       } catch (err) {
-        console.log(err, 'errror')
         throw handleError('Error en el proceso de login', '500');
       }
     },

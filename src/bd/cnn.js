@@ -1,9 +1,6 @@
+const { Pool } = require('pg');
 require('dotenv').config(); // Cargar las variables de entorno
 
-const { Pool } = require('pg');
-
-console.log("DB Host:", process.env.DB_HOST); 
-// Configuración de la conexión a PostgreSQL usando variables de entorno
 const pool = new Pool({
   user: process.env.DB_USER,      // Usuario de la base de datos
   host: process.env.DB_HOST,      // Dirección del contenedor de la base de datos
@@ -13,6 +10,7 @@ const pool = new Pool({
 });
 
 
+//PARA VERIFICAR CONEXIÓN A LA BD
 pool.connect()
   .then(client => {
     console.log('Conexión a la base de datos exitosa');
